@@ -1,0 +1,6 @@
+@CP_02_Locadora_HostAddress = http://localhost:5295
+
+GET {{CP_02_Locadora_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
