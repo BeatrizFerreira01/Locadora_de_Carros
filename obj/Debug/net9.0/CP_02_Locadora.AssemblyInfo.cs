@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CP_02_Locadora")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ad405244c2faa307062e12942d072520fbf19c9f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CP_02_Locadora")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CP_02_Locadora")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
