@@ -1,4 +1,3 @@
-
 # 🚗 Projeto - Locadora de Carros
 
 **Sistema de Locação de Carros com Cálculo de Diárias e Descontos**  
@@ -24,23 +23,30 @@ Projeto desenvolvido para a disciplina de **Advanced Business Development with .
 
 ### 2. Clonar o repositório
 ```bash
-git clone https://github.com/SeuUsuario/CP_02_Locadora.git
+git clone https://github.com/SeuUsuario/Locadora_de_Carros.git
 ```
 
 ### 3. Navegar até o projeto
 ```bash
-cd CP_02_Locadora
+cd Locadora_de_Carros
 ```
 
 ### 4. Configurar a string de conexão
 Edite o `appsettings.json` e insira sua string de conexão Oracle:
 ```json
 "ConnectionStrings": {
-  "DefaultConnection": "User Id=xxx;Password=xxx;Data Source=localhost:oracle.fiap.com.br;"
+  "DefaultConnection": "User Id=xxx;Password=SENHA;Data Source=oracle.fiap.com.br:1521/orcl;"
 }
 ```
 
-### 5. Rodar o projeto
+### 5. Criar o banco com EF Core
+Abra o console do Gerenciador de Pacotes e execute:
+```powershell
+Add-Migration InitialCreate
+Update-Database
+```
+
+### 6. Rodar o projeto
 ```bash
 dotnet run
 ```
@@ -52,16 +58,16 @@ dotnet run
 ### Carros
 | Método | URL | Função |
 |--------|-----|--------|
-| GET | /api/carros | Listar todos os carros |
-| GET | /api/carros/{id} | Buscar carro por ID |
-| POST | /api/carros | Cadastrar carro |
-| PUT | /api/carros/{id} | Atualizar carro |
-| DELETE | /api/carros/{id} | Remover carro |
+| GET    | /api/carros         | Listar todos os carros     |
+| GET    | /api/carros/{id}    | Buscar carro por ID        |
+| POST   | /api/carros         | Cadastrar carro            |
+| PUT    | /api/carros/{id}    | Atualizar carro            |
+| DELETE | /api/carros/{id}    | Remover carro              |
 
 ### Locação
-| Método | URL | Função |
-|--------|-----|--------|
-| POST | /api/locacoes/calcular | Calcular valor da locação com base em dias e descontos |
+| Método | URL                        | Função                        |
+|--------|----------------------------|-------------------------------|
+| POST   | /api/locacoes/calcular     | Calcular valor da locação     |
 
 ---
 
@@ -82,9 +88,13 @@ CREATE TABLE Carros (
 ## 📋 Regras de Negócio
 
 ### Cálculo de Locação
-- Menos de 3 dias: **Sem desconto**
-- De 3 a 6 dias: **5% de desconto**
-- 7 dias ou mais: **10% de desconto**
+
+- Dias = `dataFim - dataInicio`
+- Subtotal = dias × valor da diária
+- Regras de desconto:
+  - **Menos de 3 dias**: sem desconto
+  - **De 3 a 6 dias**: 5% de desconto
+  - **7 dias ou mais**: 10% de desconto
 
 ---
 
@@ -111,6 +121,20 @@ CREATE TABLE Carros (
 }
 ```
 
+### Saída Esperada
+```json
+{
+  "carro": "M3 Competion",
+  "marca": "BMW",
+  "dataInicio": "2025-05-06",
+  "dataFim": "2025-05-10",
+  "valorDiaria": 1500,
+  "subtotal": 6000,
+  "desconto": "10%",
+  "valorFinal": 5400
+}
+```
+
 ---
 
 ## 👩‍💻 Desenvolvedora
@@ -125,4 +149,6 @@ Este projeto foi desenvolvido como parte da disciplina **Advanced Business Devel
 - Criação de API REST com ASP.NET Core  
 - Integração com banco de dados Oracle  
 - Cálculo de regras de negócio com lógica de desconto  
-- Testes com Postman
+- Testes com Postman  
+- Organização de código com boas práticas e comentários explicativos  
+- Utilização do EF Core com migrações (Add-Migration / Update-Database)
