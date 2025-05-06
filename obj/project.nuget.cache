@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J3b9PQqS/k0=",
+  "dgSpecHash": "G2NSovEkHEM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\beatr\\Downloads\\Locadora_de_Carros\\CP_02_Locadora.csproj",
+  "projectFilePath": "C:\\Users\\beatr\\Downloads\\Locadora_de_Carros\\Locadora_de_Carros\\CP_02_Locadora.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beatr\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\beatr\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
