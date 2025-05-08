@@ -104,7 +104,7 @@ CREATE TABLE Carros (
 **POST:** `https://localhost:xxxx/api/carros`
 ```json
 {
-  "modelo": "M3 Competion",
+  "modelo": "M3 Competition",
   "marca": "BMW",
   "ano": 2025,
   "valorDiaria": 1500
@@ -124,7 +124,7 @@ CREATE TABLE Carros (
 ### Saída Esperada
 ```json
 {
-  "carro": "M3 Competion",
+  "carro": "M3 Competition",
   "marca": "BMW",
   "dataInicio": "2025-05-06",
   "dataFim": "2025-05-10",
